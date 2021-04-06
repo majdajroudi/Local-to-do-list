@@ -8,7 +8,6 @@ function Sidebar()  {
   const {SubMenu} = Menu;
 
   return(
-    <Layout className="sidebar">
       <Sider className="sidebar__bar">
         <div className="sidebar__bar__user">
           <Avatar className="sidebar__bar__user__avatar" size={64} icon ={<UserOutlined />} />
@@ -18,7 +17,6 @@ function Sidebar()  {
           
         </Menu>
       </Sider>
-    </Layout>
   )
 }
 

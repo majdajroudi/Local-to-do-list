@@ -1,0 +1,35 @@
+.content {
+    margin: 2%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.content__card {
+    height: 40%;
+}
+
+.ant-card-head-title {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#create-card .ant-card-body {
+    display: flex;
+    align-items: center;
+}
+
+.ant-card-body {
+    height: 100%;
+}
+
+.content__card__createBox {
+    width: 100%;
+    font-size: 3.1em;
+    color: rgb(97, 97, 97);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
