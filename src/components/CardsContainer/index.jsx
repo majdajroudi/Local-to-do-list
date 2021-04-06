@@ -17,7 +17,7 @@ function CardsContainer(props) {
             })}
 
             {addingCard? 
-                <EmptyCard addingCardFunction={setAddingCard} /> : 
+                <EmptyCard addingCardFunction={setAddingCard} cards={props.cards} cardsFunction={props.cardsFunction}/> : 
                 <Card 
                   hoverable={true} 
                   id="create-card" 

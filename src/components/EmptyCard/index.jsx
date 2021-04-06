@@ -20,6 +20,14 @@ function EmptyCard(props) {
         props.addingCardFunction(false)
     }
 
+    const handleConfirmClick = () => {
+        const cardsCopy = [...props.cards]
+        const capitalizedTitle = titleValue.charAt(0).toUpperCase() + titleValue.slice(1)
+        cardsCopy.push({title: capitalizedTitle, items: [], category: ""})
+        props.cardsFunction(cardsCopy)
+        props.addingCardFunction(false)
+    }
+
     return(
         <Card className="content__card" title={TitleInput}>
             <div className="addItem">
@@ -28,10 +36,10 @@ function EmptyCard(props) {
                 </Button>
             </div>
             <div className="addCard">
-                <Button className="addCard--cancelBtn" onClick={(e) => handleCancelClick()}>
+                <Button className="addCard--cancelBtn" onClick={() => handleCancelClick()}>
                     Cancel
                 </Button>
-                <Button className="addCard--confirmBtn">
+                <Button className="addCard--confirmBtn" onClick={() => handleConfirmClick()}>
                     Confirm
                 </Button>
             </div>

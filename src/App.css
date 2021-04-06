@@ -1,5 +1,6 @@
 .content__card.ant-card.ant-card-bordered {
-  height: 40%;
+  height: 350px;
+  margin: 10px;
 }
 
 body {
