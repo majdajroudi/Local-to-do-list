@@ -1,0 +1,17 @@
+.nameForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.nameForm_control.form-control.form-control-lg {
+    width: 50%;
+    border: none;
+    text-align: center;
+}
+
+/* .nameForm_control.form-control.form-control-lg:select {
+    outline:none;
+    outline-width: 0;
+} */
