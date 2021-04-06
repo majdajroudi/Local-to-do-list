@@ -10,7 +10,7 @@ function CardsContainer(props) {
         <Content className="content">
             {props.cards.map((currentCard, cardIndex) => {
                 return (
-                    <SingleCard card={currentCard} />
+                    <SingleCard key={`project-${cardIndex}`} card={currentCard} />
                 )
             })}
 

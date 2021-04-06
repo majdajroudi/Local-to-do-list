@@ -1,11 +1,20 @@
 import React from "react"
-import {Card} from "antd"
+import {Card, Checkbox} from "antd"
 import "./index.css"
 
 function SingleCard(props) {
     return(
-        <Card>
-
+        <Card title={props.card.title}>
+            <ul>
+                {props.card.items.map((currentItem, itemIndex) => {
+                    return(
+                        <li>
+                            <Checkbox/>
+                            <span>{currentItem}</span>
+                        </li>
+                    )
+                })}
+            </ul>
         </Card>
     )
 }
