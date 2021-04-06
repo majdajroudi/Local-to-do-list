@@ -8,7 +8,6 @@ function CardsContainer(props) {
     const {Content} = Layout;
     const [addingCard, setAddingCard] = useState(false)
 
-
     return(
         <Content className="content">
             {props.cards.map((currentCard, cardIndex) => {

@@ -7,7 +7,7 @@ import "./index.css"
 
 function Home() {
     const [userName, setUserName]           = useState("");
-    const [projectCards, setProjectCards]   = useState([{title:"project", items:["hi", "bye"]}])
+    const [projectCards, setProjectCards]   = useState([])
 
     return(
         <Layout className="home">
