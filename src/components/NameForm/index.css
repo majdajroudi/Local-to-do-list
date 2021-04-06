@@ -5,7 +5,7 @@
     height: 100vh;
 }
 
-.nameForm_control.form-control.form-control-lg {
+.nameForm_control.ant-input.ant-input-lg {
     width: 50%;
     border: none;
     text-align: center;

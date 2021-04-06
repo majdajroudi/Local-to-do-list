@@ -1,5 +1,5 @@
 import Home from "./containers/Home"
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'antd/dist/antd.css'
 import './App.css';
 
 function App() {

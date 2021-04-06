@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from "react"
-import {Form} from "react-bootstrap"
+import {Input} from "antd"
 import "./index.css"
 
 function NameForm(props) {
@@ -17,11 +17,11 @@ function NameForm(props) {
 
     return(
         <div className="nameForm">
-            <Form.Control className="nameForm_control" 
+            <Input className="nameForm_control" 
               value={userInput} onChange={(e) => {handleInputChange(e)}}  
               placeholder="Type your name and press Enter"
               onKeyDown={(e) => {handleEnterKey(e)}}
-              size="lg"/>
+              size="large"/>
         </div>
     )
 }
