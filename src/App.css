@@ -1,4 +1,5 @@
-.App {
+.content__card.ant-card.ant-card-bordered {
+  height: 40%;
 }
 
 body {

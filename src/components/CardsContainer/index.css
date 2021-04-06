@@ -2,11 +2,8 @@
     margin: 2%;
     height: 100%;
     display: grid;
+    grid-gap: 2%;
     grid-template-columns: repeat(3, 1fr);
-}
-
-.content__card {
-    height: 40%;
 }
 
 .ant-card-head-title {
@@ -19,7 +16,7 @@
     align-items: center;
 }
 
-.ant-card-body {
+#create-card .ant-card-body {
     height: 100%;
 }
 

@@ -1,10 +1,13 @@
-import React from "react"
+import React,{useState} from "react"
 import {Layout, Card, Button} from "antd"
 import SingleCard from "../SingleCard"
+import EmptyCard from "../EmptyCard"
 import "./index.css"
 
 function CardsContainer(props) {
     const {Content} = Layout;
+    const [addingCard, setAddingCard] = useState(false)
+
 
     return(
         <Content className="content">
@@ -14,11 +17,17 @@ function CardsContainer(props) {
                 )
             })}
 
-            <Card hoverable={true} id="create-card" className="content__card" >
-                <div className="content__card__createBox">
-                    +
-                </div>
-            </Card>
+            {addingCard? 
+                <EmptyCard addingCardFunction={setAddingCard} /> : 
+                <Card 
+                  hoverable={true} 
+                  id="create-card" 
+                  onClick={() => setAddingCard(true)}
+                  className="content__card" >
+                    <div className="content__card__createBox">
+                        +
+                    </div>
+                </Card>}
         </Content>
     )
 }
