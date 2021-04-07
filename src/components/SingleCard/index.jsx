@@ -13,9 +13,6 @@ function SingleCard(props) {
 
     return(
         <Card className="content__card" title={props.card.title}>
-            <div>
-                <Button onClick={(e) => handleEditClick(e)}>Edit</Button>
-            </div>
             <ul className="itemList">
                 {props.card.items.map((currentItem, itemIndex) => {
                     return(
@@ -26,6 +23,14 @@ function SingleCard(props) {
                     )
                 })}
             </ul>
+            <div className="addItem">
+                <Button className="addItemBtn">
+                    +
+                </Button>
+            </div>
+            <div>
+                <Button onClick={(e) => handleEditClick(e)}>Edit</Button>
+            </div>
             <EditCard isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} card={props.card} />
         </Card>
     )
