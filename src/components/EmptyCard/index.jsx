@@ -3,7 +3,7 @@ import {Card, Input, Typography, Button} from "antd"
 import "./index.css"
 
 function EmptyCard(props) {
-    const [titleValue, setTitleValue] = useState("")
+    const [titleValue, setTitleValue] = useState("");
     const {Title} = Typography;
 
     const TitleInput = (
@@ -14,13 +14,15 @@ function EmptyCard(props) {
                     className="content__card"
                     onChange={(e) => {setTitleValue(e.target.value)}} />
             </Title>
-        )
+    )
 
-    const handleCancelClick = () => {
-        props.addingCardFunction(false)
+    const handleItemAddition = (e) => {
+        e.preventDefault()
     }
 
-    const handleConfirmClick = () => {
+
+    const handleConfirmClick = (e) => {
+        e.preventDefault()
         const cardsCopy = [...props.cards]
         const capitalizedTitle = titleValue.charAt(0).toUpperCase() + titleValue.slice(1)
         cardsCopy.push({title: capitalizedTitle, items: [], category: ""})
@@ -31,15 +33,15 @@ function EmptyCard(props) {
     return(
         <Card className="content__card" title={TitleInput}>
             <div className="addItem">
-                <Button className="addItemBtn">
+                <Button className="addItemBtn" onClick={(e) => handleItemAddition(e)}>
                     +
                 </Button>
             </div>
             <div className="addCard">
-                <Button className="addCard--cancelBtn" onClick={() => handleCancelClick()}>
+                <Button className="addCard--cancelBtn" onClick={() => props.addingCardFunction(false)}>
                     Cancel
                 </Button>
-                <Button className="addCard--confirmBtn" onClick={() => handleConfirmClick()}>
+                <Button className="addCard--confirmBtn" onClick={(e) => handleConfirmClick(e)}>
                     Confirm
                 </Button>
             </div>
