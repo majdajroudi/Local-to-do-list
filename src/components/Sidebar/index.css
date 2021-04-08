@@ -5,9 +5,10 @@
 
 .ant-layout-sider-children{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     width: 100%;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .siderbar__bar.ant-layout-sider.ant-layout-sider-dark{
@@ -19,12 +20,22 @@
     align-items: flex-start;
 }
 
+.siderbar__bar__menu {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    margin-top: 10px;
+}
+
 .sidebar__bar__user{
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-top: 5%;
     width: 80%;
+    height: 10%;
 }
 
 .sidebar__bar__user__name {
