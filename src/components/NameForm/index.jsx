@@ -11,7 +11,7 @@ function NameForm(props) {
 
     const handleEnterKey = (e) => {
         if (e.key === "Enter") {
-            props.userNameFunction(userInput)
+            props.setUserName(userInput)
         }
     }
 

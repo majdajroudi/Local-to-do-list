@@ -7,13 +7,29 @@ import "./index.css"
 
 function Home() {
     const [userName, setUserName]           = useState("");
-    const [projectCards, setProjectCards]   = useState([])
+    const [projectCards, setProjectCards]   = useState([]);
+
+    useEffect(() => {
+        const savedInfo = localStorage.getItem("user-name")
+        if (savedInfo) {
+            setUserName(JSON.parse(savedInfo))
+        }
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem("user-name", JSON.stringify(userName))
+    })
 
     return(
-        <Layout className="home">
-            <Sidebar />
-            <CardsContainer cards={projectCards} cardsFunction={setProjectCards}/>
-        </Layout>
+        <>
+            {userName === ""?
+            <NameForm setUserName={setUserName}/>:
+            <Layout className="home">
+                
+                <Sidebar />
+                <CardsContainer cards={projectCards} cardsFunction={setProjectCards}/>
+            </Layout>}
+        </>
     )
 }
 
