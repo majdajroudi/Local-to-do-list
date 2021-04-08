@@ -1,6 +1,7 @@
 import React,{useState} from "react"
 import {Card, Checkbox,Button, Modal, Input, message} from "antd"
 import EditCard from "../EditCard"
+import SingleItemField from "../SingleItemField"
 import "./index.css"
 
 function SingleCard(props) {
@@ -37,33 +38,34 @@ function SingleCard(props) {
     }
 
     return(
-        <Card className="content__card" title={props.card.title}>
-            <ul className="itemList">
-                {props.card.items.map((currentItem, itemIndex) => {
-                    return(
-                        <li key={`item-${itemIndex}`} className="itemList__singleItem">
-                            <Checkbox>
-                                <span>{currentItem}</span>
-                            </ Checkbox>
-                        </li>
-                    )
-                })}
-            </ul>
-            <div className="addItem">
-                <Button className="addItemBtn" onClick={(e) => handleAddClick(e)}>
-                    +
-                </Button>
-                <Modal id="newItemModal" visible={isItemModalVisible} onOk={(e) => handleAddItem(e)} onCancel={() => setIsItemModalVisible(false)}>
-                    <Input 
-                      value={itemInputValue} 
-                      onChange={(e) => setItemInputValue(e.target.value)}
-                      placeholder="Add your item's name"
-                      id="newItemField"
-                      onKeyDown={(e) => handleEnterClick(e)} />
-                </Modal>
+        <Card className="content__card projectCard" title={props.card.title}>
+            <div className="card-body-top">
+                <ul className="itemList">
+                    {props.card.items.map((currentItem, itemIndex) => {
+                        return(
+                            <SingleItemField 
+                              key={`item-${itemIndex}`} 
+                              itemName={currentItem} 
+                              className="itemList__singleItem" />
+                        )
+                    })}
+                </ul>
+                <div className="addItem">
+                    <Button className="addItemBtn" onClick={(e) => handleAddClick(e)}>
+                        +
+                    </Button>
+                    <Modal className="newItemModal" visible={isItemModalVisible} onOk={(e) => handleAddItem(e)} onCancel={() => setIsItemModalVisible(false)}>
+                        <Input 
+                        value={itemInputValue} 
+                        onChange={(e) => setItemInputValue(e.target.value)}
+                        placeholder="Add your item's name"
+                        id="newItemField"
+                        onKeyDown={(e) => handleEnterClick(e)} />
+                    </Modal>
+                </div>
             </div>
-            <div>
-                <Button onClick={(e) => handleEditClick(e)}>Edit</Button>
+            <div className="editCard card-body-bottom">
+                <Button className="editCard-btn" onClick={(e) => handleEditClick(e)}>Edit</Button>
             </div>
             <EditCard isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} card={props.card} />
         </Card>

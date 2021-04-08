@@ -1,4 +1,4 @@
-import React,{useState} from "react"
+import React,{useState, useEffect} from "react"
 import {Card, Input, Typography, Button, message} from "antd"
 import "./index.css"
 
@@ -12,12 +12,16 @@ function EmptyCard(props) {
                     value={titleValue} 
                     placeholder="Project's title"
                     className="content__card"
-                    onChange={(e) => {setTitleValue(e.target.value)}} />
+                    onChange={(e) => setTitleValue(e.target.value)}/>
             </Title>
     )
 
-    const handleItemAddition = (e) => {
+    const handleEnterClick = (e) => {
         e.preventDefault()
+        console.log(e.key)
+        if (e.key === "Enter") {
+            handleConfirmClick(e)
+        }
     }
 
 

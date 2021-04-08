@@ -1,0 +1,9 @@
+.singleItem {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.singleItem__delete:hover {
+    cursor: pointer;
+}

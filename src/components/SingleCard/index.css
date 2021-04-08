@@ -2,4 +2,46 @@
     list-style: none;
     text-align: left;
     width: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content__card.projectCard .ant-card-body {
+    height: 80%;
+}
+
+.content__card.projectCard .ant-card-header {
+    height: 20%;
+}
+
+#newItemField {
+    margin: 5%;
+}
+
+.card-body-top {
+    height: 80%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-body-bottom {
+    height: 20%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newItemModal .ant-modal-content .ant-modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
