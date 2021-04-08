@@ -19,7 +19,7 @@ function SingleCard(props) {
                         <li key={`item-${itemIndex}`} className="itemList__singleItem">
                             <Checkbox>
                                 <span>{currentItem}</span>
-                            <Checkbox />
+                            </ Checkbox>
                         </li>
                     )
                 })}
