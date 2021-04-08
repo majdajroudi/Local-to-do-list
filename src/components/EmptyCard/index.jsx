@@ -37,11 +37,6 @@ function EmptyCard(props) {
 
     return(
         <Card className="content__card" title={TitleInput}>
-            <div className="addItem">
-                <Button className="addItemBtn" onClick={(e) => handleItemAddition(e)}>
-                    +
-                </Button>
-            </div>
             <div className="addCard">
                 <Button className="addCard--cancelBtn" onClick={() => props.addingCardFunction(false)}>
                     Cancel

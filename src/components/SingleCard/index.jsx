@@ -1,14 +1,39 @@
 import React,{useState} from "react"
-import {Card, Checkbox,Button} from "antd"
+import {Card, Checkbox,Button, Modal, Input, message} from "antd"
 import EditCard from "../EditCard"
 import "./index.css"
 
 function SingleCard(props) {
     const [isModalVisible, setIsModalVisible] = useState(false)
+    const [isItemModalVisible, setIsItemModalVisible] = useState(false)
+    const [itemInputValue, setItemInputValue] = useState("")
 
     const handleEditClick = (e) => {
         e.preventDefault()
         setIsModalVisible(true)
+    }
+
+    const handleAddItem = (e) => {
+        e.preventDefault()
+        if (itemInputValue !== "") {
+            props.card.items.push(itemInputValue)
+            setIsItemModalVisible(false)
+            setItemInputValue("")
+            message.success("Item successfully added")
+        } else {
+            message.error("Item cannot be empty")
+        }
+    }
+
+    const handleAddClick = (e) => {
+        e.preventDefault()
+        setIsItemModalVisible(true)
+    }
+
+    const handleEnterClick = (e) => {
+        if (e.key === "Enter") {
+            handleAddItem(e)
+        }
     }
 
     return(
@@ -25,9 +50,17 @@ function SingleCard(props) {
                 })}
             </ul>
             <div className="addItem">
-                <Button className="addItemBtn">
+                <Button className="addItemBtn" onClick={(e) => handleAddClick(e)}>
                     +
                 </Button>
+                <Modal id="newItemModal" visible={isItemModalVisible} onOk={(e) => handleAddItem(e)} onCancel={() => setIsItemModalVisible(false)}>
+                    <Input 
+                      value={itemInputValue} 
+                      onChange={(e) => setItemInputValue(e.target.value)}
+                      placeholder="Add your item's name"
+                      id="newItemField"
+                      onKeyDown={(e) => handleEnterClick(e)} />
+                </Modal>
             </div>
             <div>
                 <Button onClick={(e) => handleEditClick(e)}>Edit</Button>
