@@ -10,14 +10,19 @@ function Home() {
     const [projectCards, setProjectCards]   = useState([]);
 
     useEffect(() => {
-        const savedInfo = localStorage.getItem("user-name")
-        if (savedInfo) {
-            setUserName(JSON.parse(savedInfo))
+        const savedName = localStorage.getItem("user-name")
+        const savedProjects = localStorage.getItem("project-cards")
+        if (savedName) {
+            setUserName(JSON.parse(savedName))
+        }
+        if (savedProjects) {
+            setProjectCards(JSON.parse(savedProjects))
         }
     }, [])
 
     useEffect(() => {
         localStorage.setItem("user-name", JSON.stringify(userName))
+        localStorage.setItem("project-cards", JSON.stringify(projectCards))
     })
 
     return(
