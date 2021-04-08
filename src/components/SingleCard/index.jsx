@@ -17,8 +17,9 @@ function SingleCard(props) {
                 {props.card.items.map((currentItem, itemIndex) => {
                     return(
                         <li key={`item-${itemIndex}`} className="itemList__singleItem">
-                            <Checkbox/>
-                            <span>{currentItem}</span>
+                            <Checkbox>
+                                <span>{currentItem}</span>
+                            <Checkbox />
                         </li>
                     )
                 })}
