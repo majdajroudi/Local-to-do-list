@@ -26,7 +26,7 @@ function Home() {
             <NameForm setUserName={setUserName}/>:
             <Layout className="home">
                 
-                <Sidebar />
+                <Sidebar userName={userName}/>
                 <CardsContainer cards={projectCards} cardsFunction={setProjectCards}/>
             </Layout>}
         </>
