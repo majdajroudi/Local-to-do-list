@@ -11,6 +11,13 @@
     border: none;
     text-align: center;
 }
+.ant-input-group-wrapper.ant-input-group-wrapper-lg.nameForm_control {
+    width: 70%;
+
+}
+
+.ant-input-wrapper.ant-input-group {
+}
 
 /* .nameForm_control.form-control.form-control-lg:select {
     outline:none;

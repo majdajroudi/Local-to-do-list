@@ -28,12 +28,11 @@
 }
 
 .siderbar__bar__menu {
-    height: 70%;
+    height: 80%;
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 0;
-    margin-top: 10px;
+    margin: 10% 0 0 0;
 }
 
 .sidebar__bar__user{

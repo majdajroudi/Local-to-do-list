@@ -1,21 +1,15 @@
 import React from "react"
-import {Layout, Menu, Avatar} from "antd"
+import {Layout, Avatar, Button} from "antd"
 import { UserOutlined } from '@ant-design/icons';
 import "./index.css"
 
 function Sidebar(props)  {
   const {Sider} = Layout;
-  const {SubMenu} = Menu;
 
-  // const handleFileSelect = (e) => {
-  //   const reader = new FileReader()
-  //   console.log(e.target.files[0])
-  //   reader.readAsDataURL(e.target.files[0])
-  //   reader.onload = function(e) {
-  //     setImageSrc(e.target.result)
-  //     console.log(e.target.result)
-  //   }
-  // }
+  const handleEditName = (e) => {
+    e.preventDefault()
+    props.setUserName("")
+  }
 
   return(
       <Sider style={{height: "100%", overflow: "auto"}} className="sidebar__bar">
@@ -24,6 +18,9 @@ function Sidebar(props)  {
           <span className="sidebar__bar__user__name">{props.userName}</span>
         </div>
         <div className="siderbar__bar__menu">
+          <Button className="siderbar__bar__menu--editName" onClick={(e) => handleEditName(e)}>
+            Edit name
+          </Button>
         </div>
       </Sider>
   )

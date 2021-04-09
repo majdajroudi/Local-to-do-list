@@ -25,6 +25,7 @@ function NameForm(props) {
             <Input className="nameForm_control" 
               value={userInput} onChange={(e) => {handleInputChange(e)}}  
               placeholder="Type your name and press Enter"
+              addonBefore="Name - Surname"
               onKeyDown={(e) => {handleEnterKey(e)}}
               ref={inputRef}
               size="large"/>
