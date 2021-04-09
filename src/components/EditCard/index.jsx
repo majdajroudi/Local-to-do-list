@@ -7,11 +7,11 @@ function EditCard(props) {
     
     const handleOk = (e) => {
         e.preventDefault()
-        const cardsCopy = [...props.cards]
-        const currCardCopy = {...props.card}
-        const cardIndex= props.cards.indexOf(props.card)
-        currCardCopy.title = editTitleValue
-        cardsCopy[cardIndex] = currCardCopy
+        const cardsCopy = [...props.cards];
+        const currCardCopy = {...props.card};
+        const cardIndex= props.cards.indexOf(props.card);
+        currCardCopy.title = editTitleValue;
+        cardsCopy[cardIndex] = currCardCopy;
         props.cardsFunction(cardsCopy)
         props.setIsModalVisible(false)
     }
