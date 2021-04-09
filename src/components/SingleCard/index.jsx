@@ -17,7 +17,9 @@ function SingleCard(props) {
     const handleAddItem = (e) => {
         e.preventDefault()
         if (itemInputValue !== "") {
-            props.card.items.push(itemInputValue)
+            const cardsCopy = [...props.cards]
+            cardsCopy[props.cardIndex].items.push(itemInputValue)
+            props.cardsFunction(cardsCopy)
             setIsItemModalVisible(false)
             setItemInputValue("")
             message.success("Item successfully added")
@@ -45,7 +47,11 @@ function SingleCard(props) {
                         return(
                             <SingleItemField 
                               key={`item-${itemIndex}`} 
-                              itemName={currentItem} 
+                              itemName={currentItem}
+                              itemIndex={itemIndex} 
+                              cards={props.cards}
+                              currentCard={props.card}
+                              cardsFunction={props.cardsFunction}
                               className="itemList__singleItem" />
                         )
                     })}
