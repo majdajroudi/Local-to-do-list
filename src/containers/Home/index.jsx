@@ -29,8 +29,7 @@ function Home() {
         <>
             {userName === ""?
             <NameForm setUserName={setUserName}/>:
-            <Layout className="home">
-                
+            <Layout style={{height: "100vh", overflow: "auto"}} className="homePage" hasSider>
                 <Sidebar userName={userName}/>
                 <CardsContainer cards={projectCards} cardsFunction={setProjectCards}/>
             </Layout>}

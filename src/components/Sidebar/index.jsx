@@ -18,7 +18,7 @@ function Sidebar(props)  {
   // }
 
   return(
-      <Sider className="sidebar__bar">
+      <Sider style={{height: "100%", overflow: "auto"}} className="sidebar__bar">
         <div className="sidebar__bar__user">
           <Avatar className="sidebar__bar__user__avatar" size={64} icon ={<UserOutlined />} alt="user-avatar" />
           <span className="sidebar__bar__user__name">{props.userName}</span>

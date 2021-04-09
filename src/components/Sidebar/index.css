@@ -1,6 +1,14 @@
 .ant-layout.ant-layout-has-sider.sidebar {
     display: flex;
     height: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.ant-layout-sider.ant-layout-sider-dark.sidebar__bar {
+    position: sticky;
+    top: 0;
 }
 
 .ant-layout-sider-children{
@@ -8,6 +16,8 @@
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
+    height: 100%;
+    overflow: auto;
     align-items: center;
 }
 

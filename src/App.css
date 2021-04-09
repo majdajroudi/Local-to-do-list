@@ -1,9 +1,8 @@
 .content__card.ant-card.ant-card-bordered {
-  height: 45%;
+  height: 45vh;
   margin: 10px;
 }
 
-body {
-  margin: 0;
-  padding: 0;
+.App {
+  height: 100vh;
 }
