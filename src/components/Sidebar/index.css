@@ -1,9 +1,6 @@
 .ant-layout.ant-layout-has-sider.sidebar {
     display: flex;
     height: 100%;
-    position: sticky;
-    top: 0;
-    left: 0;
 }
 
 .ant-layout-sider.ant-layout-sider-dark.sidebar__bar {
