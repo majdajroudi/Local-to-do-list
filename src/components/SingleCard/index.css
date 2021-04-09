@@ -35,8 +35,8 @@ ul.itemList::-webkit-scrollbar {
     margin: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: space-between;
+    align-items: stretch;
     width: 100%;
     overflow: hidden;
 }
@@ -72,4 +72,9 @@ ul.itemList::-webkit-scrollbar {
 
 .projectCard__header__top--deleteBtn:hover {
     cursor: pointer;
+}
+
+.addItem {
+    display: flex;
+    align-items: flex-end;
 }
