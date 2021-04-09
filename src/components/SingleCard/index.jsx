@@ -1,4 +1,4 @@
-import React,{useState} from "react"
+import React,{useState, useRef, useEffect, createRef} from "react"
 import {Card, Button, Modal, Input, message} from "antd"
 import EditCard from "../EditCard"
 import SingleItemField from "../SingleItemField"
@@ -8,6 +8,7 @@ function SingleCard(props) {
     const [isModalVisible, setIsModalVisible] = useState(false)
     const [isItemModalVisible, setIsItemModalVisible] = useState(false)
     const [itemInputValue, setItemInputValue] = useState("")
+    let addItemFieldRef = useRef([])
 
     const handleEditClick = (e) => {
         e.preventDefault()
@@ -32,6 +33,14 @@ function SingleCard(props) {
         e.preventDefault()
         setIsItemModalVisible(true)
     }
+
+    useEffect(() => {
+        console.log(addItemFieldRef)
+        if(isItemModalVisible === true) {
+            console.log(isItemModalVisible)
+            addItemFieldRef.current.focus()
+        }
+    },[isItemModalVisible])
 
     const handleEnterClick = (e) => {
         if (e.key === "Enter") {
@@ -68,20 +77,26 @@ function SingleCard(props) {
                         +
                     </Button>
                     <Modal className="newItemModal" visible={isItemModalVisible} onOk={(e) => handleAddItem(e)} onCancel={() => setIsItemModalVisible(false)}>
-                        <Input 
+                        <Input
                         value={itemInputValue} 
                         onChange={(e) => setItemInputValue(e.target.value)}
                         placeholder="Add your item's name"
+                        ref={addItemFieldRef}
                         id="newItemField"
                         onKeyDown={(e) => handleEnterClick(e)} />
                     </Modal>
                 </div>
             </div>
             <div className="cardBottomBtns card-body-bottom">
-                <Button className="cardBottomBtns-editBtn" onClick={(e) => handleEditClick(e)}>Edit</Button>
                 <Button className="cardBottomBtns-deleteBtn" onClick={(e) => handleDeleteCardClick(e)}> Delete </Button>
+                <Button className="cardBottomBtns-editBtn" onClick={(e) => handleEditClick(e)}>Edit</Button>
             </div>
-            <EditCard isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} card={props.card} />
+            <EditCard 
+              isModalVisible={isModalVisible} 
+              setIsModalVisible={setIsModalVisible} 
+              card={props.card}
+              cards={props.cards}
+              cardsFunction={props.cardsFunction} />
         </Card>
     )
 }
