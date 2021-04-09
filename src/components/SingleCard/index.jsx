@@ -1,5 +1,5 @@
 import React,{useState} from "react"
-import {Card, Checkbox,Button, Modal, Input, message} from "antd"
+import {Card, Button, Modal, Input, message} from "antd"
 import EditCard from "../EditCard"
 import SingleItemField from "../SingleItemField"
 import "./index.css"
