@@ -22,6 +22,8 @@ function EmptyCard(props) {
     const handleEnterClick = (e) => {
         if (e.key === "Enter") {
             handleConfirmClick(e)
+        } else if (e.key === "Escape") {
+            props.addingCardFunction(false)
         }
     }
 
