@@ -79,6 +79,7 @@ function SingleCard(props) {
                     <Modal className="newItemModal" visible={isItemModalVisible} onOk={(e) => handleAddItem(e)} onCancel={() => setIsItemModalVisible(false)}>
                         <Input
                         value={itemInputValue} 
+                        addonBefore="Item name"
                         onChange={(e) => setItemInputValue(e.target.value)}
                         placeholder="Add your item's name"
                         ref={addItemFieldRef}

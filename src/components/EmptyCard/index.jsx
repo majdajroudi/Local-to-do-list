@@ -1,9 +1,10 @@
-import React,{useState} from "react"
+import React,{useState, useRef, useEffect} from "react"
 import {Card, Input, Typography, Button, message} from "antd"
 import "./index.css"
 
 function EmptyCard(props) {
     const [titleValue, setTitleValue] = useState("");
+    const newCardTitleRef = useRef(null)
     const {Title} = Typography;
 
     const TitleInput = (
@@ -12,13 +13,13 @@ function EmptyCard(props) {
                     value={titleValue} 
                     placeholder="Project's title"
                     className="content__card"
-                    onChange={(e) => setTitleValue(e.target.value)}/>
+                    onChange={(e) => setTitleValue(e.target.value)}
+                    onKeyDown={(e) =>  handleEnterClick(e)}
+                    ref={newCardTitleRef}/>
             </Title>
     )
 
     const handleEnterClick = (e) => {
-        e.preventDefault()
-        console.log(e.key)
         if (e.key === "Enter") {
             handleConfirmClick(e)
         }
@@ -38,6 +39,12 @@ function EmptyCard(props) {
             message.error("Please add a project title")
         }
     }
+
+    useEffect(() => {
+        if(props.addingCard){
+            newCardTitleRef.current.focus()
+        }
+    }, [props.addingCard])
 
     return(
         <Card className="content__card" title={TitleInput}>

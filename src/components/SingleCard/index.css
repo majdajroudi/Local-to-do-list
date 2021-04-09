@@ -18,8 +18,9 @@
     height: 20%;
 }
 
-#newItemField {
-    margin: 5%;
+.ant-input-wrapper.ant-input-group {
+    margin: 5% 0;
+    width: 100%;
 }
 
 .card-body-top {
