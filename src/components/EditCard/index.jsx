@@ -1,6 +1,6 @@
 import React,{useState, useRef, useEffect} from "react"
 import SingleItemField from "../SingleItemField"
-import {Modal, Button, Input} from "antd"
+import {Modal, Input} from "antd"
 import "./index.css"
 
 function EditCard(props) {

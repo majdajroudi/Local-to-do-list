@@ -1,4 +1,4 @@
-import React,{useState, useRef, useEffect, createRef} from "react"
+import React,{useState, useRef, useEffect} from "react"
 import {Card, Button, Modal, Input, message, Typography} from "antd"
 import {DeleteOutlined} from "@ant-design/icons"
 import EditCard from "../EditCard"
@@ -51,9 +51,7 @@ function SingleCard(props) {
     }
 
     useEffect(() => {
-        console.log(addItemFieldRef)
         if(isItemModalVisible === true) {
-            console.log(isItemModalVisible)
             addItemFieldRef.current.focus()
         }
     },[isItemModalVisible])
