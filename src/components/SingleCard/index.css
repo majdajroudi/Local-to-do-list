@@ -1,6 +1,5 @@
 .itemList {
     list-style: none;
-    text-align: left;
     width: 100%;
     overflow-y: scroll;
     display: flex;
