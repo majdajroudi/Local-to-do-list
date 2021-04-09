@@ -1,5 +1,6 @@
 import React,{useState, useRef, useEffect, createRef} from "react"
-import {Card, Button, Modal, Input, message} from "antd"
+import {Card, Button, Modal, Input, message, Typography} from "antd"
+import {DeleteOutlined} from "@ant-design/icons"
 import EditCard from "../EditCard"
 import SingleItemField from "../SingleItemField"
 import "./index.css"
@@ -8,7 +9,22 @@ function SingleCard(props) {
     const [isModalVisible, setIsModalVisible] = useState(false)
     const [isItemModalVisible, setIsItemModalVisible] = useState(false)
     const [itemInputValue, setItemInputValue] = useState("")
-    let addItemFieldRef = useRef([])
+    const addItemFieldRef = useRef([])
+
+    const {Title} = Typography;
+
+    const CardHeader = (
+        <Title className="projectCard__header">
+            <div className="projectCard__header__top">
+                <DeleteOutlined 
+                  className="projectCard__header__top--deleteBtn"
+                  onClick={(e) => handleDeleteCardClick(e)}/>
+            </div>
+            <div className="projectCard__header__bottom">
+                {props.card.title}
+            </div>
+        </Title>
+)
 
     const handleEditClick = (e) => {
         e.preventDefault()
@@ -56,7 +72,7 @@ function SingleCard(props) {
     }
 
     return(
-        <Card className="content__card projectCard" title={props.card.title}>
+        <Card className="content__card projectCard" title={CardHeader}>
             <div className="card-body-top">
                 <ul className="itemList">
                     {props.card.items.map((currentItem, itemIndex) => {

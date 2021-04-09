@@ -6,15 +6,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0;
+    /* Hides scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    padding: 15% 0 0 0;
+}
+
+/* Hides scrollbar for Safari, Opera and Chrome*/
+ul.itemList::-webkit-scrollbar {
+    display: none;
 }
 
 .content__card.projectCard .ant-card-body {
-    height: 80%;
+    height: 78%;
 }
 
 .content__card.projectCard .ant-card-header {
-    height: 20%;
+    height: 15%;
 }
 
 .ant-input-wrapper.ant-input-group {
@@ -47,13 +55,21 @@
     align-items: center;
 }
 
-/* Hides scrollbar for Safari, Opera and Chrome*/
-ul.itemList::-webkit-scrollbar {
-    display: none;
-  }
-  
-/* Hides scrollbar for IE, Edge and Firefox */
-ul.itemList {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+.projectCard__header__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 0.5em;
+}
+
+.projectCard__header__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7em;;
+}
+
+.projectCard__header__top--deleteBtn:hover {
+    cursor: pointer;
 }

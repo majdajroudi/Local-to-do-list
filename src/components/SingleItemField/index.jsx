@@ -14,7 +14,7 @@ function SingleItemField(props) {
     }
 
     return(
-        <li className="singleItem" style={{marginTop: props.itemIndex === 1 && "5%"}}>
+        <li className="singleItem">
             <Checkbox className="singleItem__item">
                 <span>{props.itemName}</span>
             </Checkbox>

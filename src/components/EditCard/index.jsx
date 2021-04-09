@@ -1,6 +1,7 @@
 import React,{useState, useRef, useEffect} from "react"
 import SingleItemField from "../SingleItemField"
 import {Modal, Button, Input} from "antd"
+import "./index.css"
 
 function EditCard(props) {
     const [editTitleValue, setEditTitleValue] = useState(props.card.title)
@@ -41,13 +42,14 @@ function EditCard(props) {
                 <div className="modal-body-top">
                     <Input 
                     placeholder="Edit Project's name"
+                    addonBefore="Title"
                     value={editTitleValue}
                     onChange={(e) => setEditTitleValue(e.target.value)}
                     ref={titleInputRef}
                     />
                 </div>
                 <div className="modal-body-bottom">
-                    <ul className="itemList">
+                    <ul className="modal-body-bottom__itemList">
                         {props.card.items.map((currentItem, itemIndex) => {
                             return(
                                 <SingleItemField 

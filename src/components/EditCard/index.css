@@ -1,0 +1,18 @@
+.modal-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body-top {
+    margin: 1% 0;
+}
+
+.modal-body-bottom__itemList {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 0 0;
+}
