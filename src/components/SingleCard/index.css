@@ -45,3 +45,14 @@
     justify-content: center;
     align-items: center;
 }
+
+/* Hides scrollbar for Safari, Opera and Chrome*/
+ul.itemList::-webkit-scrollbar {
+    display: none;
+  }
+  
+/* Hides scrollbar for IE, Edge and Firefox */
+ul.itemList {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}

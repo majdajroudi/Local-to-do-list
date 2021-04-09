@@ -39,6 +39,13 @@ function SingleCard(props) {
         }
     }
 
+    const handleDeleteCardClick = (e) => {
+        e.preventDefault()
+        const cardsCopy = [...props.cards]
+        cardsCopy.splice(props.cardIndex, 1)
+        props.cardsFunction(cardsCopy)
+    }
+
     return(
         <Card className="content__card projectCard" title={props.card.title}>
             <div className="card-body-top">
@@ -70,8 +77,9 @@ function SingleCard(props) {
                     </Modal>
                 </div>
             </div>
-            <div className="editCard card-body-bottom">
-                <Button className="editCard-btn" onClick={(e) => handleEditClick(e)}>Edit</Button>
+            <div className="cardBottomBtns card-body-bottom">
+                <Button className="cardBottomBtns-editBtn" onClick={(e) => handleEditClick(e)}>Edit</Button>
+                <Button className="cardBottomBtns-deleteBtn" onClick={(e) => handleDeleteCardClick(e)}> Delete </Button>
             </div>
             <EditCard isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} card={props.card} />
         </Card>
