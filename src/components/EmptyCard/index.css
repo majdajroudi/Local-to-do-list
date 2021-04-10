@@ -22,9 +22,5 @@
 }
 
 .addCard--confirmBtn.ant-btn {
-    background-color: rgb(0, 150, 0);
-}
-
-.addCard--cancelBtn.ant-btn {
-    background-color: rgb(177, 15, 15);
+    background-color: #90a955;
 }

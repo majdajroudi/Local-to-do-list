@@ -6,6 +6,13 @@
 .ant-layout-sider.ant-layout-sider-dark.sidebar__bar {
     position: sticky;
     top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #213036;
 }
 
 .ant-layout-sider-children{
@@ -16,15 +23,6 @@
     height: 100%;
     overflow: auto;
     align-items: center;
-}
-
-.siderbar__bar.ant-layout-sider.ant-layout-sider-dark{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
 }
 
 .siderbar__bar__menu {

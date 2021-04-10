@@ -25,8 +25,9 @@
     margin-right: 1%; 
 }
 
-.content__header--clearBtn {
+.content__header--clearBtn.ant-btn {
     margin-left: 1%; 
+    background-color: #c75146;
 }
 
 .ant-card-head-title {
