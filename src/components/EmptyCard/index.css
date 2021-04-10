@@ -10,11 +10,6 @@
     align-items: center;
 }
 
-.addItem {
-    height:50%;
-    width: 100%
-}
-
 .addCard{
     height: 15%;
     display: flex;

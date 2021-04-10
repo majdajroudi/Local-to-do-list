@@ -4,12 +4,14 @@
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     /* Hides scrollbar for IE, Edge and Firefox */
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
-    padding: 15% 0 0 0;
+    padding: 1% 0 0 0;
+    height: 77%;
+    margin-bottom: 1%;
 }
 
 /* Hides scrollbar for Safari, Opera and Chrome*/
@@ -77,4 +79,6 @@ ul.itemList::-webkit-scrollbar {
 .addItem {
     display: flex;
     align-items: flex-end;
+    height: 25%;
+    width: 100%
 }

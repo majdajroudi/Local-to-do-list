@@ -7,3 +7,8 @@
 .singleItem__delete:hover {
     cursor: pointer;
 }
+
+.ant-card.ant-card-bordered.content__card.projectCard .ant-card-body {
+    height: 70%;
+    padding: 4%;
+}
