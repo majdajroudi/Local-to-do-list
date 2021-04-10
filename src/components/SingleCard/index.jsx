@@ -1,6 +1,6 @@
 import React,{useState, useRef, useEffect} from "react"
 import {Card, Button, Modal, Input, message, Typography} from "antd"
-import {DeleteOutlined} from "@ant-design/icons"
+import {CloseOutlined} from "@ant-design/icons"
 import EditCard from "../EditCard"
 import SingleItemField from "../SingleItemField"
 import "./index.css"
@@ -16,7 +16,7 @@ function SingleCard(props) {
     const CardHeader = (
         <Title className="projectCard__header">
             <div className="projectCard__header__top">
-                <DeleteOutlined 
+                <CloseOutlined 
                   className="projectCard__header__top--deleteBtn"
                   onClick={(e) => handleDeleteCardClick(e)}/>
             </div>
