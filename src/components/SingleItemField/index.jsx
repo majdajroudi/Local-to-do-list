@@ -1,4 +1,4 @@
-import React,{useState} from "react"
+import React from "react"
 import {Checkbox} from "antd"
 import {DeleteOutlined} from "@ant-design/icons"
 import "./index.css"
