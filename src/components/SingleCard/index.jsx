@@ -35,11 +35,12 @@ function SingleCard(props) {
         e.preventDefault()
         if (itemInputValue !== "") {
             const cardsCopy = [...props.cards]
-            cardsCopy[props.cardIndex].items.push(itemInputValue)
+            cardsCopy[props.cardIndex].items.push({title: itemInputValue, checked: false})
             props.cardsFunction(cardsCopy)
             setIsItemModalVisible(false)
             setItemInputValue("")
             message.success("Item successfully added")
+            console.log(props.cards)
         } else {
             message.error("Item cannot be empty")
         }
@@ -77,7 +78,7 @@ function SingleCard(props) {
                         return(
                             <SingleItemField 
                               key={`item-${itemIndex}`} 
-                              itemName={currentItem}
+                              currentItem={currentItem}
                               itemIndex={itemIndex} 
                               cards={props.cards}
                               currentCard={props.card}

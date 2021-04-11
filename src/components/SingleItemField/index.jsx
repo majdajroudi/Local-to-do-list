@@ -1,22 +1,30 @@
-import React from "react"
+import React,{useState} from "react"
 import {Checkbox} from "antd"
 import {DeleteOutlined} from "@ant-design/icons"
 import "./index.css"
 
 function SingleItemField(props) {
+    const [isItemChecked, setIsItemChecked] = useState(props.currentItem.checked)
+    const indexOfCard = props.cards.indexOf(props.currentCard)
+    const cardsCopy = [...props.cards]
+
 
     const handleDeleteItem = (e) => {
         e.preventDefault()
-        const indexOfCard = props.cards.indexOf(props.currentCard)
-        const cardsCopy = [...props.cards]
         cardsCopy[indexOfCard].items.splice(props.itemIndex, 1)
+        props.cardsFunction(cardsCopy)
+    }
+
+    const handleItemCheck = (e) => {
+        setIsItemChecked(e.target.checked);
+        cardsCopy[indexOfCard].items[props.itemIndex].checked = e.target.checked;
         props.cardsFunction(cardsCopy)
     }
 
     return(
         <li className="singleItem">
-            <Checkbox className="singleItem__item">
-                <span>{props.itemName}</span>
+            <Checkbox className="singleItem__item" checked={props.currentItem.checked} onChange={(e) => handleItemCheck(e)}>
+                <span>{props.currentItem.title}</span>
             </Checkbox>
             <DeleteOutlined className="singleItem__delete" onClick={(e) => handleDeleteItem(e)}/>
         </li>
