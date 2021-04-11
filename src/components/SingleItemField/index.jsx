@@ -4,7 +4,6 @@ import {DeleteOutlined} from "@ant-design/icons"
 import "./index.css"
 
 function SingleItemField(props) {
-    const [isItemChecked, setIsItemChecked] = useState(props.currentItem.checked)
     const indexOfCard = props.cards.indexOf(props.currentCard)
     const cardsCopy = [...props.cards]
 
@@ -16,7 +15,6 @@ function SingleItemField(props) {
     }
 
     const handleItemCheck = (e) => {
-        setIsItemChecked(e.target.checked);
         cardsCopy[indexOfCard].items[props.itemIndex].checked = e.target.checked;
         props.cardsFunction(cardsCopy)
     }
